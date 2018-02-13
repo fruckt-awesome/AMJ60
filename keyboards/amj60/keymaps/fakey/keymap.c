@@ -20,11 +20,12 @@
 #define DUALFN LT(1, TG(2))
 
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Дефолтный слой
         * ,-----------------------------------------------------------.
-        * |esc | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |bckspc|
+        * |esc~| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |bckspc|
         * |-----------------------------------------------------------|
         * |tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] |  \  |
         * |-----------------------------------------------------------|
@@ -47,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * ,-----------------------------------------------------------.
         * |altf4| F1| F2| F3| F4| F5| F6| F7| F8| F9| F10| VOLD| VOLU|bl|
         * |-----------------------------------------------------------|
-        * |tab  | home | up | end | BL |  |  |  |  |  |  |  |  |RESET |
+        * |tab  | home | up | end | BL | BL_BRTG |  |  |  |  |  |  |  |RESET |
         * |-----------------------------------------------------------|
         * |caps\fn1|left|down |right |  |  |  |  |  |  |  |  | enter |
         * |-----------------------------------------------------------|
@@ -62,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,      KC_HOME, KC_UP, KC_END, BL_TOGG, _______, _______, _______, _______, _______, _______, KC_PGDOWN, KC_PGUP,     KC_PSCREEN,     \
         _______,        KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______, _______, _______, _______, _______, _______,          RESET,     \
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                 _______,     \
-        KC_MPRV, KC_MPLY, KC_MNXT,                              _______,                                     _______, DUALFN, _______, _______),
+        KC_MPRV, KC_MPLY, KC_MNXT,                              _______,                                     _______, _______, _______, _______),
         
    
     /* Слой Fn2 / Переключение на слой при нажатии Fn2
@@ -80,11 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     
     [_FN2] = KEYMAP_ANSI(
-        _______,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______,     \
-        _______,      KC_Q, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______,     \
-        _______,        KC_Q, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,     \
-        _______,          KC_Q, _______, _______, _______, _______, _______, _______, _______, _______, _______,                 _______,     \
-        _______, _______, _______,                              _______,                                     _______, FN2, _______, _______),
+        XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,     \
+        XXXXXXX,      KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,     \
+        XXXXXXX,        KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,             XXXXXXX,     \
+        XXXXXXX,          KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX,     \
+        XXXXXXX, XXXXXXX, XXXXXXX,                              XXXXXXX,                                     XXXXXXX, FN2, XXXXXXX, XXXXXXX),
     
     
 };

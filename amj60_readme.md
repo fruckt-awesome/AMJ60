@@ -7,8 +7,7 @@ awesome keyboard 60%
 2. Установить QMK Toolbox, для прошивки.
     Установка msys2 для компиляции .hex файла прошивки: http://www.msys2.org/
     cd ../qmk_firmware
-    util/msys2_install.sh
-    36 13
+    util/msys2_install.sh - установить make и драйвера.
 
 3. В папке \qmk_firmware\keyboards\amj60\keymaps есть несколько готовых вариантов слоев.
 4. В папке \qmk_firmware\keyboards\amj60\ в файле amj60.h указаны основные варианты компановки.
