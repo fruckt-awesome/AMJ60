@@ -8,13 +8,14 @@ awesome keyboard 60%
     Установка msys2 для компиляции .hex файла прошивки: http://www.msys2.org/
     cd ../qmk_firmware
     util/msys2_install.sh - установить make и драйвера.
-
 3. В папке \qmk_firmware\keyboards\amj60\keymaps есть несколько готовых вариантов слоев.
 4. В папке \qmk_firmware\keyboards\amj60\ в файле amj60.h указаны основные варианты компановки.
+     В папке \qmk_firmware\keyboards\amj60\ в файле config.h -конфиг прошивки.
 5. Создаем папку со своей раскладкой в \keymaps. Я взял за основу дефолтную 60% ANSI раскладку.
     Для визуализации своей раскладки можно воспользоваться: http://www.keyboard-layout-editor.com/
 6. В документации ищем нужные коды клавишь.
 7. Компилируем новый файл keymap.c в .hex.
+    В msys2: make amj60:keyboard_name
 8. Открываем QMK Toolbox, переводим плату в режим прошивки путем нажатия кнопки RESET на обратной стороне платы, после прошивки переподключаем плату.
 9. Проверка работы ключей, например с помощью: https://elitekeyboards.com/switchhitter.php
 
