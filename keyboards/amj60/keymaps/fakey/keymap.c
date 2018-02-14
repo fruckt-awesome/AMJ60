@@ -11,6 +11,8 @@
 
 
 
+
+
 // increase readability 
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
@@ -33,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * |-----------------------------------------------------------|
         * |shift    | Z | X | C | V | B | N | M | , | . | / |  shift  |
         * |-----------------------------------------------------------|
-        * |ctr |win |alt |        space          |alt |fn2 |ctr |del  |
+        * |ctr |win |alt |        space          |alt |fn1 |ctr |del  |
         * `-----------------------------------------------------------'
      */
     
@@ -46,46 +48,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     
     /* Слой fn1 / Переход к слою при удерживании.
         * ,-----------------------------------------------------------.
-        * |altf4| F1| F2| F3| F4| F5| F6| F7| F8| F9| F10| VOLD| VOLU|bl|
+        * |altf4| F1| F2| F3| F4| F5| F6| F7| F8| F9| F10| VOLD| VOLU|calc|
         * |-----------------------------------------------------------|
-        * |tab  | home | up | end | BL | BL_BRTG |  |  |  |  |  |  |  |RESET |
+        * |tab  | home | up | end | BL |  |  |  |  |  |  |  |  |PSCREEN |
         * |-----------------------------------------------------------|
         * |caps\fn1|left|down |right |  |  |  |  |  |  |  |  | enter |
         * |-----------------------------------------------------------|
-        * |shift     |  |  |calc|  |  |  |  |  |  |  |  shift   |
+        * |shift     |  |  |  |  |  |  |  |  |  |  |  shift   |
         * |-----------------------------------------------------------|
         * |ptrack|play|ntrack|       space       |alt |fn2 |ctr |del  |
         * `-----------------------------------------------------------'
      */
     
     [_FN1] = KEYMAP_ANSI(
-        ALTF4,      KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_VOLD, KC_VOLU,                          KC_CALC,     \
+        ALTF4,      KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                          KC_CALC,     \
         _______,      KC_HOME, KC_UP, KC_END, BL_TOGG, _______, _______, _______, _______, _______, _______, KC_PGDOWN, KC_PGUP,     KC_PSCREEN,     \
         _______,        KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______, _______, _______, _______, _______, _______,          RESET,     \
-        _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                 _______,     \
+        _______,          _______, _______, _______, _______, _______, _______, KC_MUTE, KC_VOLD, KC_VOLU, _______,                 _______,     \
         KC_MPRV, KC_MPLY, KC_MNXT,                              _______,                                     _______, _______, _______, _______),
-        
-   
-    /* Слой Fn2 / Переключение на слой при нажатии Fn2
-         * ,-----------------------------------------------------------.
-        * |esc | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |bckspc|
-        * |-----------------------------------------------------------|
-        * |tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] |  \  |
-        * |-----------------------------------------------------------|
-        * |caps   | A | S | D | F | G | H | J | K | L | ; | ' | enter |
-        * |-----------------------------------------------------------|
-        * |shift    | Z | X | C | V | B | N | M | , | . | / |  shift   |
-        * |-----------------------------------------------------------|
-        * |ctr |win |alt |        space          |alt |fn2 |ctr |del  |
-        * `-----------------------------------------------------------'
-     */
-    
-    [_FN2] = KEYMAP_ANSI(
-        XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,     \
-        XXXXXXX,      KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,     \
-        XXXXXXX,        KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,             XXXXXXX,     \
-        XXXXXXX,          KC_Q, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX,     \
-        XXXXXXX, XXXXXXX, XXXXXXX,                              XXXXXXX,                                     XXXXXXX, FN2, XXXXXXX, XXXXXXX),
-    
-    
+
 };
