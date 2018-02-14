@@ -21,6 +21,8 @@
 #define ALTF4 LALT(KC_F4)
 #define DUALFN LT(1, TG(2))
 
+#define RADMIN M(0)
+#define ADMIN M(1)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -62,9 +64,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     
     [_FN1] = KEYMAP_ANSI(
         ALTF4,      KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                          KC_CALC,     \
-        _______,      KC_HOME, KC_UP, KC_END, BL_TOGG, _______, _______, _______, _______, _______, _______, KC_PGDOWN, KC_PGUP,     KC_PSCREEN,     \
+        RADMIN,      KC_HOME, KC_UP, KC_END, BL_TOGG, _______, _______, _______, _______, _______, _______, KC_PGDOWN, KC_PGUP,     KC_PSCREEN,     \
         _______,        KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______, _______, _______, _______, _______, _______,          RESET,     \
-        _______,          _______, _______, _______, _______, _______, _______, KC_MUTE, KC_VOLD, KC_VOLU, _______,                 _______,     \
+        ADMIN,          _______, _______, _______, _______, _______, _______, KC_MUTE, KC_VOLD, KC_VOLU, _______,                 _______,     \
         KC_MPRV, KC_MPLY, KC_MNXT,                              _______,                                     _______, _______, _______, _______),
 
 };
+
+
+
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    if (record->event.pressed) {
+        switch(id) {
+            case 0:
+                SEND_STRING("Admin14"SS_TAP(X_TAB)"P@ssw0rd14");
+            case 1:
+                SEND_STRING("trula-la"SS_TAP(X_TAB)"Dhtvzktxbn14");
+        }
+    }
+    return MACRO_NONE;
+};
+
+
