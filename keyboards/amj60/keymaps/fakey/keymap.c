@@ -78,9 +78,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
     if (record->event.pressed) {
         switch(id) {
             case 0:
-                SEND_STRING("Admin14"SS_TAP(X_TAB)"P@ssw0rd14");
+                SEND_STRING("RAZ");
             case 1:
-                SEND_STRING("trula-la"SS_TAP(X_TAB)"Dhtvzktxbn14");
+                SEND_STRING("DVA");
         }
     }
     return MACRO_NONE;
